@@ -17,7 +17,7 @@ sleep 15
 echo "fund BTC staker account on Babylon"
 docker exec babylondnode0 /bin/sh -c '
     BTC_STAKER_ADDR=$(/bin/babylond --home /babylondhome/.tmpdir keys add \
-        btc-staker --output json --keyring-backend test | jq -r .address) && \
+        btc-staker --output json --keyring-backend test -y | jq -r .address) && \
     /bin/babylond --home /babylondhome tx bank send test-spending-key \
         ${BTC_STAKER_ADDR} 100000000ubbn --fees 2ubbn -y \
         --chain-id chain-test --keyring-backend test

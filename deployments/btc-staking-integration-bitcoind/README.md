@@ -33,7 +33,8 @@ It showcases how the Consumer chain integrates with Babylon for BTC staking.
 ### Start the BTC staking integration demo
 
 ```shell
-git submodule update --init
+git submodule --init
+git submodule update --remote
 make start-deployment-btc-staking-integration-bitcoind-demo
 ```
 
